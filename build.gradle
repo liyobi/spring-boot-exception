@@ -26,13 +26,18 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-	compile("org.springframework.boot:spring-boot-starter-web")
+	compile("org.springframework.boot:spring-boot-starter-web" ){
+		 exclude group: 'org.springframework.boot', module: 'spring-boot-starter-json'
+	}
+	
     // tag::actuator[]
     compile("org.springframework.boot:spring-boot-starter-actuator")
     
     compile('com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.9.0')
     
     compile('org.apache.commons:commons-lang3:3.1')
+    
+    compile('com.google.code.gson:gson:2.8.4')
     
     compileOnly 'org.projectlombok:lombok:1.16.20'
     // end::actuator[]
